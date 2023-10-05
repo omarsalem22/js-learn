@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>paper</title>
+</head>
+
+<body>
+  <p>Rock Paper Scissors </p>
+  <button onclick="
+  playgame('Rock')
+  " >Rock</button>
+
+  <button onclick="
+
+  playgame('Paper')
+  
+  
+  
+  " >Paper</button>
+
+
+
+  <button onclick="
+
+  playgame('Scissors')
+  
+  
+  ">Scissors</button>
+
+  <button onclick="
+  showResult()
+  " >ShowResult</button>
+  <Button onclick="
+  resetScore()
+  
+  ">Reset Score</Button>
+
+  <script>
+
+    const score=
+      JSON.parse(localStorage.getItem('score'));
+
+ 
+
+
+    var items = Array("Rock","Paper","Scissors");
+   
+     function computerMove(){
+     var item=''
+     item = items[Math.floor(Math.random()*items.length)];
+
+     return item
+
+
+     }
+     function playgame(playerMove){
+      item= computerMove()
+      if (playerMove==='Rock'){
+          if (item==='Rock') {
+            score.ties+=1
+            alert(item+' Tie');
+
+        
+            
+          }  
+          else if(item==='Paper') {
+          
+            score.losses+=1
+            
+            alert (item+' You loose');
+        
+        
+          }
+          else{
+            score.wins+=1
+            
+            alert(item+' You win');
+          }
+        }
+      else if (playerMove==='Paper'){
+
+                    item=  computerMove()
+                    if (item==='Paper'){ 
+                          score.ties+=1
+                          alert(item+' Tie');
+
+                    }
+                    else if (item==='Rock') {
+                      score.wins+=1
+
+                      alert(item+' You win');
+                      
+
+                    }
+                    else{
+                      
+                      score.losses+=1
+
+                      alert(item+' You loose');
+
+                    }
+
+             }
+       else{
+
+            item= computerMove()
+            if (item==='Scissors'){
+              score.ties+=1
+
+              alert(item+' Tie');
+
+            }
+            else if (item==='Paper') {
+              score.wins+=1
+              alert(item+' You win');
+              
+
+            }
+            else{
+              score.losses+=1
+              alert(item+' You loose');
+
+            }
+
+
+
+     }
+     localStorage.setItem('score',JSON.stringify (score))
+    }
+    function showResult(){
+      alert(`win ${score.wins} loose ${score.losses} ties ${score.ties} `)
+    }
+
+   function resetScore(){
+    score.wins=0
+    score.losses=0
+    score.ties=0
+   }
+
+  </script>
+</body>
+
+</html>

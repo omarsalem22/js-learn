@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+    <link rel="stylesheet" href="omar.css">
+    <style>
+      .d1{
+        margin-top: 30px;
+        margin-left: 30px;
+
+      }
+
+    </style>
+
+</head>
+<body>
+  <div class="d1">
+
+  <button 
+  onclick="
+  console.log(`Cart Quantity is : ${cartQuantity}`) "
+   >Show Quantity</button>
+  <button 
+  onclick="
+  cartQuantity+=1 ";
+  > Add to Cart</button>
+  <button   onclick="
+  cartQuantity+=2 ";>+2 </button>
+  <button
+  onclick="
+  cartQuantity+=3 ";
+  
+  > +3</button>
+  <button  
+
+  onclick=
+  "
+  cartQuantity=0;
+  console.log('Cart was reset') ;
+  console.log(`Cart Quantity is : ${cartQuantity}`) ;
+  
+  "
+
+   
+  
+  
+  
+  >Reset</button>
+  </div>
+
+  <script>
+
+     let cartQuantity=0;
+
+
+  </script>
+  
+</body>
+</html>

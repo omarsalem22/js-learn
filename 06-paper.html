@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>paper</title>
+</head>
+
+<body>
+  <p>Rock Paper Scissors </p>
+  <button onclick="
+  var item = items[Math.floor(Math.random()*items.length)];
+  if (item==='Rock') {
+    alert(item+' Tie');
+
+    
+  }  
+  else if(item==='Paper') {
+  
+
+    alert (item+' You loose');
+
+
+  }
+  else{
+    
+    alert(item+' You win');
+  }
+  " >Rock</button>
+  <button onclick="
+  var item = items[Math.floor(Math.random()*items.length)];
+  if (item==='Paper'){
+    alert(item+' Tie');
+
+  }
+  else if (item==='Rock') {
+    alert(item+' You win');
+    
+
+  }
+  else{
+    alert(item+' You loose');
+
+  }
+  
+  
+  " >Paper</button>
+
+
+  <button onclick="
+  var item = items[Math.floor(Math.random()*items.length)];
+  if (item==='Scissors'){
+    alert(item+' Tie');
+
+  }
+  else if (item==='Paper') {
+    alert(item+' You win');
+    
+
+  }
+  else{
+    alert(item+' You loose');
+
+  }
+  
+  
+  ">Scissors</button>
+
+
+  <script>
+
+    var items = Array("Rock","Paper","Scissors");
+  
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>paper</title>
+</head>
+
+<body>
+  <p>Rock Paper Scissors </p>
+  <button onclick="
+  playgame('Rock')
+  " >Rock</button>
+
+  <button onclick="
+
+  playgame('Paper')
+  
+  
+  
+  " >Paper</button>
+
+
+  <button onclick="
+
+  playgame('Scissors')
+  
+  
+  ">Scissors</button>
+
+
+  <script>
+
+    var items = Array("Rock","Paper","Scissors");
+   
+     function computerMove(){
+     var item=''
+     item = items[Math.floor(Math.random()*items.length)];
+
+     return item
+
+
+     }
+     function playgame(playerMove){
+      item= computerMove()
+      if (playerMove==='Rock'){
+          if (item==='Rock') {
+            alert(item+' Tie');
+        
+            
+          }  
+          else if(item==='Paper') {
+          
+        
+            alert (item+' You loose');
+        
+        
+          }
+          else{
+            
+            alert(item+' You win');
+          }
+        }
+      else if (playerMove==='Paper'){
+
+                            item=  computerMove()
+                    if (item==='Paper'){
+                      alert(item+' Tie');
+
+                    }
+                    else if (item==='Rock') {
+                      alert(item+' You win');
+                      
+
+                    }
+                    else{
+                      alert(item+' You loose');
+
+                    }
+
+             }
+       else{
+
+            item= computerMove()
+            if (item==='Scissors'){
+              alert(item+' Tie');
+
+            }
+            else if (item==='Paper') {
+              alert(item+' You win');
+              
+
+            }
+            else{
+              alert(item+' You loose');
+
+            }
+
+
+
+     }
+    }
+
+
+
+  </script>
+</body>
+
+</html>

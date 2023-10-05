@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    body{
+      font-family: Arial;
+    }
+   .btnData{
+      background-color: black;
+      border: none ;
+      color: white;
+      font-size: large;
+      padding: 10px 15px 10px 15px;
+      border-radius: 50px ; 
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+    .Subscribed{
+      background-color: gray;
+      color: black;
+      margin-bottom: 5px;
+      
+
+    }
+       .cost-input{
+        font-size: 18px;
+        padding: 10px  ;
+       }
+       .calc-btn{
+        background-color: green;
+        color:  white;
+        border: none;
+        font-size: 15px;
+        padding: 12px 40px;
+        cursor: pointer;
+
+       }
+  </style>
+</head>
+<body>
+  <p>YouTube Subscribe button</p>
+
+  <button class="btnData" onclick="
+   
+  buttonData();
+  
+  " >Subscribe</button>
+<p>Amazon Shipping calculator</p>
+<p>under 40$ Shipping + 10$</p>
+<p>Over 40$ free shipping</p>
+   
+  <input class="js-input cost-input" type="number" placeholder="Enter Cost"
+  
+  onkeydown="
+  typing()
+  calcEnter()
+  
+  "> 
+
+  <button onclick="
+  removetyping()
+  caculateTotatl()
+
+  " class="calc-btn">Calculate</button>
+   <p class="js-typing" ></p>
+  <p class="js-output"  ></p>
+     
+
+  <script>
+
+
+    function buttonData(){
+       
+    var data= document.querySelector('.btnData');
+       console.log(data.innerHTML);
+        if (data.innerHTML  ==='Subscribe'){
+          
+        data.innerHTML='Subscribed';
+        data.classList.add('Subscribed')
+       }
+       else{
+        data.innerHTML='Subscribe';
+        data.classList.remove('Subscribed')
+
+
+       }
+
+    }
+
+
+    function caculateTotatl(){
+
+      const input= document.querySelector('.js-input');
+      let cost=Number (input.value);
+      console.log(typeof cost)
+      
+
+     if (cost>=40){ 
+                 cost+=10
+                 document.querySelector('.js-output').innerHTML=`$${cost}`;
+      }
+       else{
+        document.querySelector('.js-output').innerHTML=`$${cost}`;
+
+       }         
+    }
+     function typing(){ 
+
+      document.querySelector('.js-typing').innerHTML='Typing ....'
+
+     }
+     function removetyping(){
+      document.querySelector('.js-typing').innerHTML=''
+
+     }
+  function calcEnter(){
+    pressedkey=event.key
+    if (pressedkey==="Enter"){
+      removetyping()
+      caculateTotatl()
+
+    }
+  }
+
+
+  </script>
+</body>
+</html>
