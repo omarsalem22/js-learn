@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays</title>
+ <link rel="stylesheet" href="style/array.css">
+</head>
+
+<body>
+
+  <h1>To do list 1</h1>
+  <div class="add-todo-grid">
+  <input type="text" class="js-todo1 input-namecsss" placeholder="add" >
+  <input class="js-date input-datecss" type="date">
+  <button class="btn1" onclick="
+            task1()
+  ">Add</button>
+</div>
+
+  <div class="js-tasks to-grid"></div>
+
+
+
+
+  <script>
+
+    function render(){
+      let todohtml=''
+
+      toDoArr.forEach(function(todoobj,index){
+        const {name,duedate}=todoobj
+        const html= `<div>${name}</div> <div> ${duedate}</div> <button class="delete-btn" onclick="toDoArr.splice(${index},1);   
+          render();"> Delete </button> `
+        
+        todohtml+=html
+
+      }
+      ) 
+       for (let index=0 ; index<=toDoArr.length-1;index++){
+
+ 
+ 
+ 
+       }
+       document.querySelector('.js-tasks').innerHTML=todohtml;
+ 
+  
+ 
+     }
+
+    var toDoArr = []
+    let i = 0;
+    function task1() {
+      var name = document.querySelector('.js-todo1').value
+      var duedate=document.querySelector('.js-date').value
+     
+    
+
+      toDoArr.push({
+        name
+        ,duedate});
+        name.value = '';
+
+      render()
+
+
+    }
+  
+
+
+  </script>
+</body>
+
+</html>
